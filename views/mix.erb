@@ -1,0 +1,28 @@
+<div class="sixteen content">
+	<% if @tracks.empty? %>
+		<h3>Sorry we didn't find any <%= query %> tracks :(</h3>
+		<h4>but don't be sad, we have a picture for you:</h4>
+	<% else%>
+		<h3>Your <%= query %> mix is ready :)</h3>
+	<% end%>
+	<div class="player">
+		<img src='<%=img %>' alt="">
+		<div class="controls">
+			<div class="sc-player">
+					<% @tracks.each do |track|%>
+						<a href="<%= track[:permalink_url]%>"><%= track[:title] %></a>
+					<% end %>
+			</div>	
+		</div>
+	</div>
+	<% if not @tracks.empty? %>
+		<div class="tracklist">
+			<h3>Heard in this mix:</h3>
+				<ul>
+					<% @tracks.each do |track|%>
+						<li><a href="<%= track[:permalink_url]%>" target="_blank"><%= track[:title] %></a>
+					<% end %>
+				</ul>
+		</div>
+	<% end %>
+</div>

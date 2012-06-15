@@ -1,0 +1,24 @@
+/* TEAM */
+	Designer, developer, founder & owner : Aleksandar Diklić
+	Contact: rastasheep [at] gmail.com
+	Github: http://github.com/rastasheep
+	Twitter: @lesa_ns
+	From: Novi Sad, Serbia
+
+/* SPECIAL THANKS */
+	To soundcloud team
+	http://soundcloud.com
+
+	To flickr team
+	http://flickr.com
+
+	To author of this awesome responsive template I used 
+	http://getskeleton.com
+
+/* SITE */
+	Founded: 2012/06/14
+	Language: English
+	Standards: HTML5, CSS3
+	Components: Sinatrarb, Ruby, Sass, jQuery
+	Software: Sublime Text, gimp
+	Github repo: http://github.com/rastasheep/gShuffle
