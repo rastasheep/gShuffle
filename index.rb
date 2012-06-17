@@ -39,9 +39,9 @@ post '/' do
   redirect to(temp), 303
 end
 
-get '/style.css' do
-  scss :style
-end
+#get '/style.css' do
+#  scss :style
+#end
 
 get '/:search' do
   @title = "Shuffling "+ params[:search]+" mix" 
