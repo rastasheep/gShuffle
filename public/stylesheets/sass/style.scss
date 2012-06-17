@@ -1,0 +1,50 @@
+@import "base";
+@import "skeleton";
+@import "sc-player";
+
+.container{@include container; @include clearfix;}
+.sixteen{@include columns(16);}
+
+body{background-image: url("/images/background.png");}
+
+.title, input.search {
+	display: inline-block;
+	margin-top: 40px
+}
+
+footer{
+	text-align: center;
+	padding-bottom:50px;
+	a{
+		opacity: 0.5;
+		-moz-opacity: 0.5;
+		filter:alpha(opacity=5);
+	}
+	a:hover{
+		opacity: 1;
+		-moz-opacity: 1;
+		filter:alpha(opacity=1);
+	}
+	.soundcloud{
+		background: url('images/sprite.png') no-repeat -307px -19px;
+		width: 59px;
+		height: 36px;
+		display: inline-block;
+		}
+}
+.content{
+	text-align: center;
+	h3 {
+		padding-top:20px;
+	}
+}
+
+.player{
+	position:relative;
+	padding-top: 20px;
+}
+.controls{
+	position:absolute;
+	left:435px;
+	top:40%;
+}

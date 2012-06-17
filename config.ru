@@ -1,3 +1,7 @@
-require "./index.rb"
+require 'rubygems'
+require 'bundler'
 
- run Sinatra::Application
+Bundler.require
+
+require "./index.rb"
+run Sinatra::Application
