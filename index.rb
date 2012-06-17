@@ -39,6 +39,16 @@ post '/' do
   redirect to(temp), 303
 end
 
+get '/genres' do
+  @title = "Some of interesting genres"
+  erb :genres
+end
+
+get '/about' do
+  @title = "About gShuffle"
+  erb :about
+end
+
 #get '/style.css' do
 #  scss :style
 #end

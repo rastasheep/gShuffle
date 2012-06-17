@@ -1,4 +1,5 @@
 GEM
+  remote: https://rubygems.org/
   specs:
     crack (0.1.8)
     flickraw (0.9.6)

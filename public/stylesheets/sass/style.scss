@@ -4,6 +4,10 @@
 
 .container{@include container; @include clearfix;}
 .sixteen{@include columns(16);}
+.four{@include columns(4);}
+.row{@include row();}
+.alpha{@include alpha();}
+.omega{@include omega();}
 
 body{background-image: url("/images/background.png");}
 
