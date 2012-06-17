@@ -221,37 +221,37 @@ display: none;
 
 .sc-player .sc-controls a {
   color: transparent;
-  background: url('images/sprite.png') no-repeat -153px 0;
+  background: url('/images/sprite.png') no-repeat -153px 0;
   width: 75px;
   height: 75px;
 }
 
 .sc-player .sc-controls a:hover {
-  background: url('images/sprite.png') no-repeat -230px 0;
+  background: url('/images/sprite.png') no-repeat -230px 0;
   width: 75px;
   height: 75px;
 }
 
 .sc-player .sc-controls a.sc-pause {
-  background: url('images/sprite.png') no-repeat -153px 0;
+  background: url('/images/sprite.png') no-repeat -153px 0;
   width: 75px;
   height: 75px;
 }
 
 .sc-player .sc-controls a.sc-pause:hover{
-  background: url('images/sprite.png') no-repeat -230px 0;
+  background: url('/images/sprite.png') no-repeat -230px 0;
   width: 75px;
   height: 75px;
 }
 
 .sc-player.playing .sc-controls a.sc-pause{
-  background: url('images/sprite.png') no-repeat 0 0;
+  background: url('/images/sprite.png') no-repeat 0 0;
   width: 75px;
   height: 75px;
 }
 
 .sc-player.playing .sc-controls a.sc-pause:hover{
-  background: url('images/sprite.png') no-repeat -76px 0;
+  background: url('/images/sprite.png') no-repeat -76px 0;
   width: 75px;
   height: 75px;
 }  
