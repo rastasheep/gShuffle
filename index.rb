@@ -29,7 +29,7 @@ helpers do
 end
 
 get '/' do
-  @title = "Ready to shuffle on gShuffle"
+  @title = "Ready to shuffle | gShuffle"
   erb :index, :locals => {:img => getImg, :query => 'welcome'}
 end
 
@@ -39,7 +39,7 @@ post '/' do
 end
 
 get '/genres' do
-  @title = "Some of interesting genres"
+  @title = "Some of interesting genres | gShuffle "
   erb :genres
 end
 
@@ -53,7 +53,7 @@ end
 #end
 
 get '/:search' do
-  @title = "Shuffling "+ params[:search]+" mix" 
+  @title = "Shuffling "+ params[:search]+" mix | gShuffle " 
   getTracks(params[:search])
   erb :mix, :locals => {:img => getImg, :query => params[:search]}
 end
