@@ -7,9 +7,8 @@ use Sass::Plugin::Rack
 
 configure :production do
   use Rack::Static,
-      urls: ['/stylesheets'],
-      root: File.expand_path('../tmp', __FILE__)
-
+    urls: ['/stylesheets'],
+    root: File.expand_path('../tmp', __FILE__)
   Sass::Plugin.options.merge!(template_location: 'public/stylesheets/sass',
                               css_location: 'tmp/stylesheets')
 end
@@ -30,8 +29,8 @@ helpers do
 end
 
 get '/' do
-  @title = "Ready to shuffle"
-  erb :index, :locals => {:img => getImg, :query => 'test'}
+  @title = "Ready to shuffle on gShuffle"
+  erb :index, :locals => {:img => getImg, :query => 'welcome'}
 end
 
 post '/' do
@@ -60,6 +59,6 @@ get '/:search' do
 end
 
 not_found do
-  @title = "Not found:"
+  @title = "Not found on gShuffle"
   erb :"404"
 end
