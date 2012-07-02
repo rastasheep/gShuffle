@@ -298,15 +298,6 @@
         // load first tracks
         loadUrl(links[index]);
       },
-      artworkImage = function(track, usePlaceholder) {
-        if(usePlaceholder){
-          return '<div class="sc-loading-artwork">Loading Artwork</div>';
-        }else if (track.artwork_url) {
-          return '<img src="' + track.artwork_url.replace('-large', '-t300x300') + '"/>';
-        }else{
-          return '<div class="sc-no-artwork">No Artwork</div>';
-        }
-      },
       updateTrackInfo = function($player, track) {
         // update the current track info in the player
         // log('updateTrackInfo', track);
@@ -315,25 +306,7 @@
           $('h4', this).html('by <a href="' + track.user.permalink_url +'">' + track.user.username + '</a>');
           $('p', this).html(track.description || 'no Description');
         });
-        // update the artwork
-        $('.sc-artwork-list li', $player).each(function(index) {
-          var $item = $(this),
-              itemTrack = $item.data('sc-track');
 
-          if (itemTrack === track) {
-            // show track artwork
-            $item
-              .addClass('active')
-              .find('.sc-loading-artwork')
-                .each(function(index) {
-                  // if the image isn't loaded yet, do it now
-                  $(this).removeClass('sc-loading-artwork').html(artworkImage(track, false));
-                });
-          }else{
-            // reset other artworks
-            $item.removeClass('active');
-          }
-        });
         // update the track duration in the progress bar
         $('.sc-duration', $player).html(timecode(track.duration));
         // put the waveform into the progress bar
@@ -486,7 +459,6 @@
         sourceClasses = $source[0].className.replace('sc-player', ''),
         links = opts.links || $.map($('a', $source).add($source.filter('a')), function(val) { return {url: val.href, title: val.innerHTML}; }),
         $player = $('<div class="sc-player loading"></div>').data('sc-player', {id: playerId}),
-        $artworks = $('<ol class="sc-artwork-list"></ol>').appendTo($player),
         $info = $('<div class="sc-info"><h3></h3><h4></h4><p></p><a href="#" class="sc-info-close">X</a></div>').appendTo($player),
         $controls = $('<div class="sc-controls"></div>').appendTo($player),
         $list = $('<ol class="sc-trackslist"></ol>').appendTo($player);
@@ -525,11 +497,6 @@
             // create an item in the playlist
             $('<li><a href="' + track.permalink_url +'">' + track.title + '</a><span class="sc-track-duration">' + timecode(track.duration) + '</span></li>').data('sc-track', {id:index}).toggleClass('active', active).appendTo($list);
             // create an item in the artwork list
-            $('<li></li>')
-              .append(artworkImage(track, index >= opts.loadArtworks))
-              .appendTo($artworks)
-              .toggleClass('active', active)
-              .data('sc-track', track);
           });
           // update the element before rendering it in the DOM
           $player.each(function() {
@@ -606,7 +573,6 @@
     autoPlay: false,
     continuePlayback: true,
     randomize: false,
-    loadArtworks: 5,
     // the default Api key should be replaced by your own one
     // get it here http://soundcloud.com/you/apps/new
     apiKey: 'htuiRd1JP11Ww0X72T1C3g'
@@ -645,9 +611,7 @@
       onPause($player);
     }
     $track.addClass('active').siblings('li').removeClass('active');
-    $('.artworks li', $player).each(function(index) {
-      $(this).toggleClass('active', index === trackId);
-    });
+
     return false;
   });
 

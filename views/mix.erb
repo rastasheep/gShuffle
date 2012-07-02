@@ -25,8 +25,8 @@
 	</div>
 	<% if not @tracks.empty? %>
 		<div class="tracklist">
-			<h3>Heard in this mix:</h3>
-				<ul>
+			<h3><a href=""id="tracks" onclick="toggle_visibility('trck');">Looking for links? we got that too</a></h3>
+				<ul id="trck">
 					<% @tracks.each do |track|%>
 						<li><a href="<%= track[:permalink_url]%>" target="_blank"><%= track[:title] %></a>
 					<% end %>

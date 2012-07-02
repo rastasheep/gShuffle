@@ -9,6 +9,15 @@
 .alpha{@include alpha();}
 .omega{@include omega();}
 
+$orange: #F60;
+
+.transition{
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
 body{background-image: url("/images/background.png");}
 
 .title, input.search {
@@ -25,6 +34,7 @@ footer{
 		filter:alpha(opacity=5);
 	}
 	a:hover{
+		@extend .transition;
 		opacity: 1;
 		-moz-opacity: 1;
 		filter:alpha(opacity=1);
@@ -47,7 +57,28 @@ footer{
 	}
 }
 h1 a, h1 a:hover{
-		text-decoration:none;
+	@extend .transition;
+	text-decoration:none;
+}
+.toolbar{
+	position: fixed;
+	top: 27%;
+	left: 0;
+	padding: 5px;
+	background-color: $orange;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	opacity: 0.5;
+	z-index: 1;
+	@extend .transition;
+	a{
+		color: #333;
+	}
+}
+.toolbar:hover{
+	opacity: 1;
+	-moz-opacity: 1;
+	filter:alpha(opacity=1);
 }
 
 .player{
@@ -57,11 +88,14 @@ h1 a, h1 a:hover{
 .controls{
 	position:absolute;
 	left:435px;
-	top:40%;
+	top:25%;
 }
 .orange{
-	color: #F60;
+	color: $orange;
 }
 .addthis_toolbox {
 	display: inline-block;
+}
+#trck{
+	display: none;
 }
